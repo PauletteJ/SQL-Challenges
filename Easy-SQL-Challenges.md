@@ -60,3 +60,29 @@ Weather Observation Station 4
 Find the difference between the total number of CITY entries in the table and the number of distinct CITY entries in the table.
 
 SELECT COUNT(city) - COUNT(DISTINCT(city)) FROM station;
+
+--------
+
+Query the two cities in STATION with the shortest and longest CITY names, as well as their respective lengths (i.e.: number of characters in the name). If there is more than one smallest or largest city, choose the one that comes first when ordered alphabetically. 
+
+SELECT TOP 1 city, LEN(city) FROM station ORDER BY LEN(city), city ASC;
+SELECT TOP 1 city, LEN(city) FROM station ORDER BY LEN(city) DESC, city DESC;
+
+--------
+
+Weather Observation Station 6
+
+Query the list of CITY names starting with vowels (i.e., a, e, i, o, or u) from STATION. Your result cannot contain duplicates.
+
+SELECT DISTINCT(city) FROM STATION WHERE city LIKE "[AEIOU]%";
+
+Query the list of CITY names starting with vowels (i.e., a, e, i, o, or u) from STATION. Your result cannot contain duplicates.
+
+--------
+Weather Observation Station 7
+
+Query the list of CITY names ending with vowels (a, e, i, o, u) from STATION. Your result cannot contain duplicates.
+
+SELECT DISTINCT(city) FROM STATION WHERE city LIKE "%[AEIOU]";
+
+--------
