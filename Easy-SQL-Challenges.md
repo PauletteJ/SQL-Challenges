@@ -211,3 +211,20 @@ SELECT CAST (CEILING((AVG(CAST(salary AS FLOAT))  - AVG(CAST(REPLACE(salary, 0, 
 
 --------
 
+Top Earners
+
+We define an employee's total earnings to be their monthly salary x months worked, and the maximum total earnings to be the maximum total earnings for any employee in the Employee table. Write a query to find the maximum total earnings for all employees as well as the total number of employees who have maximum total earnings. Then print these values as space-separated integers.
+
+--------
+
+Weather Observation Station 2
+
+Query the following two values from the STATION table:
+
+The sum of all values in LAT_N rounded to a scale of 2 decimal places.
+The sum of all values in LONG_W rounded to a scale of 2 decimal places.
+
+SELECT FORMAT(SUM(lat_n), 'F2'), FORMAT(SUM(long_w), 'F2') FROM station;
+
+--------
+
