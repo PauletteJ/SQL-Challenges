@@ -228,3 +228,27 @@ SELECT FORMAT(SUM(lat_n), 'F2'), FORMAT(SUM(long_w), 'F2') FROM station;
 
 --------
 
+Weather Observation Station 13
+
+Query the sum of Northern Latitudes (LAT_N) from STATION having values greater than 38.7880 and less than 137.2345. Truncate your answer to 4 decimal places.
+
+SELECT FORMAT(SUM(lat_n), 'F4') FROM station WHERE lat_n > 38.7880 AND lat_n < 137.2345;
+
+--------
+
+Weather Observation Station 14
+
+Query the greatest value of the Northern Latitudes (LAT_N) from STATION that is less than 137.2345. Truncate your answer to 4 decimal places.
+
+SELECT FORMAT(MAX(lat_n), 'F4') FROM station WHERE lat_n < 137.2345;
+
+--------
+
+Weather Observation Station 15
+
+Query the Western Longitude (LONG_W) for the largest Northern Latitude (LAT_N) in STATION that is less than 137.2345. Round your answer to 4 decimal places.
+
+SELECT FORMAT(long_W, 'F4') FROM station WHERE lat_n =  (SELECT MAX(lat_n) FROM station WHERE lat_n < 137.2345);
+
+--------
+
