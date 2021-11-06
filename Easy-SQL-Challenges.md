@@ -292,6 +292,41 @@ Consider P1(a, c) and P2(b, d) to be two points on a 2D plane where (a, b) are t
 
 Query the Euclidean Distance between points P1 and P2 and format your answer to display 4 decimal digits.
 
+--------
+
+Population Census 
+
+Given the CITY and COUNTRY tables, query the sum of the populations of all cities where the CONTINENT is 'Asia'.
+
+Note: CITY.CountryCode and COUNTRY.Code are matching key columns.
+
+SELECT SUM(city.population) FROM city 
+JOIN country ON city.countrycode = country.code
+WHERE country.continent = "Asia";
+
+--------
+
+African Cities
+
+Given the CITY and COUNTRY tables, query the names of all cities where the CONTINENT is 'Africa'.
+
+Note: CITY.CountryCode and COUNTRY.Code are matching key columns.
+
+SELECT city.name FROM city
+JOIN country ON city.countrycode = country.code
+WHERE country.continent = "Africa";
+
+--------
+
+Average Population of Each Continent
+
+Given the CITY and COUNTRY tables, query the names of all the continents (COUNTRY.Continent) and their respective average city populations (CITY.Population) rounded down to the nearest integer.
+
+SELECT country.continent, FLOOR(AVG(city.population)) FROM country
+JOIN city ON country.code = city.countrycode
+GROUP BY country.continent;
+
+
 
 
 
