@@ -331,8 +331,71 @@ GROUP BY country.continent;
 
 --------
 
+Type of Triangle
+
+Write a query identifying the type of each record in the TRIANGLES table using its three side lengths. Output one of the following statements for each record in the table:
+
+    Equilateral: It's a triangle with 
+
+sides of equal length.
+Isosceles: It's a triangle with
+sides of equal length.
+Scalene: It's a triangle with
+sides of differing lengths.
+Not A Triangle: The given values of A, B, and C don't form a triangle.
+
+SELECT CASE
+			WHEN A + B > C AND A + C > B AND B + C > A THEN 
+				CASE
+        			WHEN A = B AND A = C THEN 'Equilateral'
+        			WHEN A = B OR A = C OR B = C THEN 'Isosceles'
+        			ELSE 'Scalene'
+        		END      	
+        	ELSE 'Not A Triangle'
+        END
+FROM TRIANGLES;
+
+--------
+Draw The Triangle 1
+
+P(R) represents a pattern drawn by Julia in R rows. The following pattern represents P(5):
+
+* * * * * 
+* * * * 
+* * * 
+* * 
+*
+
+Write a query to print the pattern P(20).
+
+DECLARE @i INT = 20
+WHILE (@i > 0) 
+BEGIN
+   PRINT REPLICATE('* ', @i) 
+   SET @i = @i - 1
+END;
+
+--------
+
+Draw The Triangle 2
+
+P(R) represents a pattern drawn by Julia in R rows. The following pattern represents P(5):
+
+* 
+* * 
+* * * 
+* * * * 
+* * * * *
+
+Write a query to print the pattern P(20).
 
 
+DECLARE @i INT = 1
+WHILE (@i < 21) 
+BEGIN
+   PRINT REPLICATE('* ', @i) 
+   SET @i = @i + 1
+END;
 
 
 
